@@ -1,0 +1,38 @@
+﻿<Window
+    x:Class="star123.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:star123"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d">
+    <StackPanel>
+
+        <Grid Grid.Row="0">
+            <TextBlock><Bold>별점 컨트롤 실습</Bold></TextBlock>
+        </Grid>
+
+
+        <ContentPresenter Grid.Column="0" Margin="0,12,12,12" CornerRadius="8" Padding="50" HorizontalAlignment="Left"  VerticalAlignment="Top">
+            <RatingControl x:Name="RatingControl1" IsClearEnabled="False" IsReadOnly="False" 
+                       Caption="choose ratings" ValueChanged="MyRating_ValueChanged_1"/>
+        </ContentPresenter>
+
+            <ContentPresenter Grid.Column="2"  Padding="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Silver">
+
+                <CheckBox x:Name="clearEnabledCheck" Content="IsClearEnabled"  Checked="clearEnabledCheck_Checked"/>
+
+            </ContentPresenter>
+
+            <ContentPresenter Grid.Column="2" Padding="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Silver">
+
+            <TextBlock Text="별점을 지우려면 왼쪽으로 스와이프하십시오.." TextWrapping="Wrap"/>
+            </ContentPresenter>
+
+        <ContentPresenter Grid.Column="1" Grid.Row="2" Padding="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Silver">
+
+            <CheckBox x:Name="readOnlyCheck" Content="Is Read Only" Checked="readOnlyCheck_Checked" />
+        </ContentPresenter>
+    </StackPanel>
+</Window>
